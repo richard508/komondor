@@ -1,3 +1,5 @@
+require 'active_support/concern'
+
 module SingleSignOn
   module UserConcerns
     extend ActiveSupport::Concern

@@ -1,0 +1,28 @@
+jQuery ($) ->
+  $.ajax
+    dataType: "jsonp"
+    url: "<%= ENV['SSO_URL'] %>/apps/list.json"
+    data: SingleSignOn
+    success: (data) ->
+      makeSSOTapBar(data)
+
+  makeSSOTapBar = (data) ->
+    bar = $ '<div />',
+      id: "sso_top_bar"
+    bar.append list(data.apps)
+    bar.prependTo('body')
+  list = (apps) ->
+    list = $ '<ul />',
+      id: "sso_app_list"
+    list.append app for app in links(apps)
+    list.prepend "<li class='sso_app'><a href='<%= ENV['SSO_URL'] %>'><%= ENV['SSO_NAME'] %></a></li>"
+    list
+  links = (apps) ->
+    for app in apps
+      if window.location.href.indexOf(app.url) is -1
+        classes = "sso_app"
+      else
+        classes = "sso_app active"
+      $ "<li />",
+        class: classes
+        html: "<a href='http://#{app.url}'>#{app.name}</a>"
