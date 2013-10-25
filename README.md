@@ -12,13 +12,19 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install single_sign_on
-
 ## Usage
 
 TODO: Write usage instructions here
+
+For any controllers you wish to protect, you need to add a before filter
+
+```ruby
+# For Rails 3
+before_filter :signed_in_user
+
+# For Rails 4
+before_action :signed_in_user
+```
 
 ## Contributing
 

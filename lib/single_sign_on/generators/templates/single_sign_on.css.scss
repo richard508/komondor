@@ -7,15 +7,23 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
   padding: 0 20px;
+  overflow: hidden;
+  .signout {
+    float: right;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em;
+  }
 }
 #sso_app_list {
+  float: left;
   margin: 0;
   padding: 0;
   list-style-type: none;
   overflow: hidden;
   li {
     float: left;
-    padding: 0.5em 0.5em;
+    padding: 0.5em;
   }
   a {
     color: #888;

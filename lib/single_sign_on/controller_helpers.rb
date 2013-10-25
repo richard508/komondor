@@ -16,12 +16,12 @@ module SingleSignOn
     end
 
     def sign_out
-      self.current_user = nil
+      self.current_user = OpenStruct.new(identity_id: -1)
       cookies.delete(:remember_token)
     end
 
     def signed_in?
-      !current_user.nil?
+      current_user.identity_id != -1
     end
 
     def current_user=(user)
@@ -30,7 +30,11 @@ module SingleSignOn
 
     def current_user
       remember_token  = User.encrypt(cookies[:remember_token])
-      @current_user ||= User.find_by(remember_token: remember_token)
+      if ::Rails.version >= '4.0'
+        @current_user ||= User.find_by(remember_token: remember_token) || OpenStruct.new(identity_id: -1)
+      else
+        @current_user ||= User.find_by_remember_token(remember_token) || OpenStruct.new(identity_id: -1)
+      end
     end
 
     def signed_in_user
