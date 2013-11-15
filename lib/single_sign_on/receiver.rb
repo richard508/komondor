@@ -10,7 +10,7 @@ module SingleSignOn
     end
 
     def parsed_message
-      @msg ||= Marshal.load(Base64.decode64(@message))
+      @msg ||= Marshal.load(Base64.urlsafe_decode64(@message))
     end
 
     def valid?
