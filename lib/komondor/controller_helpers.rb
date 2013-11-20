@@ -37,7 +37,7 @@ module Komondor
       end
     end
 
-    def signed_in_user
+    def guard_dog
       unless signed_in?
         redirect_to new_sessions_path
       end
