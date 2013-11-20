@@ -1,6 +1,6 @@
 # Komondor
 
-A helper gem to add single sign on to apps.
+A helper gem to add single-sign-on to apps.
 
 ## Installation
 
@@ -16,8 +16,12 @@ Then run the installer
 
     $ rails g komondor:install
 
+Then run migrations
 
-## Usage
+    $ rake db:migrate
+
+
+## Basic Usage
 
 We use 3 environment variables in each connected app
 
@@ -33,6 +37,34 @@ before_filter :guard_dog
 
 # For Rails 4
 before_action :guard_dog
+```
+
+## Advanced Usage
+
+### Top Bar
+
+By default this gem adds a topbar to your page that will add links to all apps the signed in user has the ability to access. Once installed, you can edit the style of the top bar with the `komondor.css.scss` file added to `app/assets/stylesheets`.
+
+If you don't want to use the top bar, you can remove the folllowing lines from their respective files:
+
+_**app/assets/javascripts/application.js**_
+
+```js
+//= require komondor
+```
+
+_**app/views/layouts/application.html.erb**_
+
+```html
+<script>Komondor = { identity_id: <%= current_user.identity_id %> };</script>
+```
+
+And delete the stylesheet: `komondor.css.scss`
+
+Without the topbar you will need to add a signout link:
+
+```erb
+<%= link_to "Signout", sessions_path, method: :delete %>
 ```
 
 ## Contributing
