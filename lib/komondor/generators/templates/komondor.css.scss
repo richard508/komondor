@@ -1,12 +1,18 @@
 body {
   padding: 0;
   margin: 0;
+  padding-top: 35px;
 }
 #sso_top_bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 98%;
   background-color: #000;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
-  padding: 0 20px;
+  padding: 0 1%;
+  height: 35px;
   overflow: hidden;
   .signout {
     float: right;
