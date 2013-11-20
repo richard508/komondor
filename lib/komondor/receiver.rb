@@ -1,4 +1,4 @@
-module SingleSignOn
+module Komondor
   class Receiver
     def initialize signed_message
       if signed_message.nil?

@@ -1,4 +1,4 @@
-# SingleSignOn
+# Komondor
 
 TODO: Write a gem description
 

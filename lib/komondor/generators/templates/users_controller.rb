@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   def new
     if params[:sig]
-      receiver = SingleSignOn::Receiver.new(params[:sig])
+      receiver = Komondor::Receiver.new(params[:sig])
       unless receiver.valid?
         render nothing: true, status: :bad_request
         return

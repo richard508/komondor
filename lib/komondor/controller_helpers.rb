@@ -1,6 +1,6 @@
 require 'active_support/concern'
 
-module SingleSignOn
+module Komondor
   module ControllerHelpers
     extend ActiveSupport::Concern
 

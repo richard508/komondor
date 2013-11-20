@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    receiver = SingleSignOn::Receiver.new(params[:sig])
+    receiver = Komondor::Receiver.new(params[:sig])
     unless receiver.valid?
       redirect_to "#{ENV['SSO_URL']}/signin?referrer=#{request.host}"
       return
@@ -21,7 +21,7 @@ class SessionsController < ApplicationController
   end
 
   def signout
-    receiver = SingleSignOn::Receiver.new(params[:sig])
+    receiver = Komondor::Receiver.new(params[:sig])
     if receiver.valid?
 <% if rails4? -%>
       user = User.find_by(identity_id: receiver.parsed_message[0])

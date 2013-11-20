@@ -1,13 +1,13 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'single_sign_on/version'
+require 'komondor/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "single_sign_on"
-  spec.version       = SingleSignOn::VERSION
-  spec.authors       = ["Richard Almonte"]
-  spec.email         = ["richard.almonte@infosurv.com"]
+  spec.name          = "komondor"
+  spec.version       = Komondor::VERSION
+  spec.authors       = ["Richard Almonte", "David Briggs"]
+  spec.email         = ["richard.almonte@infosurv.com", "dbriggs@me.com"]
   spec.description   = %q{TODO: Write a gem description}
   spec.summary       = %q{TODO: Write a gem summary}
   spec.homepage      = ""

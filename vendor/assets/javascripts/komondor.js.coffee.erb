@@ -1,9 +1,9 @@
 jQuery ($) ->
-  if SingleSignOn && SingleSignOn.identity_id isnt -1
+  if Komondor && Komondor.identity_id isnt -1
     $.ajax
       dataType: "jsonp"
       url: "<%= ENV['SSO_URL'] %>/apps/list.json"
-      data: SingleSignOn
+      data: Komondor
       success: (data) ->
         makeSSOTapBar(data)
 
