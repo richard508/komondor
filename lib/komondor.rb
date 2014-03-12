@@ -1,5 +1,6 @@
 require "komondor/version"
 require "komondor/receiver"
+require "komondor/sender"
 require "komondor/user_concerns"
 require "komondor/controller_helpers"
 require 'komondor/engine' if ::Rails.version >= '3.1'

@@ -1,6 +1,6 @@
 # Komondor
 
-A helper gem to add single-sign-on to apps.
+A helper gem to add single-sign-on to rails apps.
 
 ## Installation
 

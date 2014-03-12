@@ -23,6 +23,7 @@ module Komondor
 
       def create_topbar
         template 'komondor.css.scss', 'app/assets/stylesheets/komondor.css.scss'
+        template 'komondor.js.coffee.erb', 'app/assets/javascripts/komondor.js.coffee.erb'
         inject_into_file 'app/assets/javascripts/application.js', before: "//= require_tree ." do
           "//= require komondor\n"
         end

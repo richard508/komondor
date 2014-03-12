@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Komondor::VERSION
   spec.authors       = ["Richard Almonte", "David Briggs"]
   spec.email         = ["richard.almonte@infosurv.com", "dbriggs@me.com"]
-  spec.description   = %q{A helper gem to add single sign on to apps.}
-  spec.summary       = %q{A helper gem to add single sign on to apps.}
+  spec.description   = %q{A helper gem to add single sign on to rails apps.}
+  spec.summary       = %q{A helper gem to add single sign on to rails apps.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
