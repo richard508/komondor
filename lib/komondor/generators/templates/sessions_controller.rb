@@ -6,9 +6,9 @@ class SessionsController < ApplicationController
       return
     end
 <% if rails4? -%>
-    user = User.find_by(identity_id: receiver.parsed_message[0])
+    user = User.find_by(identity_id: "#{receiver.parsed_message[0]}")
 <% else -%>
-    user = User.find_by_identity_id(receiver.parsed_message[0])
+    user = User.find_by_identity_id("#{receiver.parsed_message[0]}")
 <% end -%>
     sign_in user if user
     redirect_to root_path

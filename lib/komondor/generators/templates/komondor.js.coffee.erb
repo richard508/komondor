@@ -1,8 +1,8 @@
-jQuery ($) ->
+komondor = ->
   if Komondor && Komondor.identity_id isnt -1
     $.ajax
       dataType: "jsonp"
-      url: "<%%= ENV['SSO_URL'] %>/apps/list.json"
+      url: "#{Komondor.url}/apps/list.json"
       data: Komondor
       success: (data) ->
         makeSSOTapBar(data)
@@ -17,7 +17,7 @@ jQuery ($) ->
       list = $ '<ul />',
         id: "sso_app_list"
       list.append app for app in links(apps)
-      list.prepend "<li class='sso_app'><a href='<%%= ENV['SSO_URL'] %>'><%%= ENV['SSO_NAME'] %></a></li>"
+      list.prepend "<li class='sso_app'><a href='#{Komondor.url}'>#{Komondor.name}</a></li>"
       list
     links = (apps) ->
       for app in apps
@@ -28,3 +28,6 @@ jQuery ($) ->
         $ "<li />",
           class: classes
           html: "<a href='http://#{app.url}'>#{app.name}</a>"
+
+$(document).ready(komondor)
+$(document).on("page:load", komondor)

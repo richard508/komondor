@@ -28,7 +28,7 @@ module Komondor
           "//= require komondor\n"
         end
         inject_into_file "app/views/layouts/application.html.erb", before: "</head>" do
-          "  <script>Komondor = { identity_id: <%= current_user.identity_id %> };</script>\n"
+          "  <script>Komondor = { identity_id: <%= current_user.identity_id %>, url: '<%= ENV['SSO_URL'] %>', name: '<%= ENV['SSO_NAME'] %>' };</script>\n"
         end
       end
 
