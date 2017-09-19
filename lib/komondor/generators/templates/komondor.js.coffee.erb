@@ -27,7 +27,7 @@ komondor = ->
           classes = "sso_app active"
         $ "<li />",
           class: classes
-          html: "<a href='http://#{app.url}'>#{app.name}</a>"
+          html: "<a href='https://#{app.url}'>#{app.name}</a>"
 
 $(document).ready(komondor)
 $(document).on("page:load", komondor)
