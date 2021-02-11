@@ -7,11 +7,12 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 98%;
+  width: 100%;
+  box-sizing: border-box;
   background-color: #000;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 14px;
-  padding: 0 1%;
+  padding: 0 1em;
   height: 35px;
   overflow: hidden;
   .signout {
